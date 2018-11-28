@@ -15,20 +15,20 @@ Install _fastlane_ using
 or alternatively using `brew cask install fastlane`
 
 # Available Actions
-## Mac
-### mac beta
+## macOS
+### macOS beta
 ```
-fastlane mac beta
+fastlane macOS beta
 ```
 Description of what the lane does
-### mac builddebug
+### macOS builddebug
 ```
-fastlane mac builddebug
+fastlane macOS builddebug
 ```
 
-### mac buildrelease
+### macOS buildrelease
 ```
-fastlane mac buildrelease
+fastlane macOS buildrelease
 ```
 
 

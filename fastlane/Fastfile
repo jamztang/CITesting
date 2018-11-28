@@ -14,9 +14,9 @@
 # update_fastlane
 #
 # https://docs.fastlane.tools/actions
-default_platform(:mac)
+default_platform(:macOS)
 
-platform :mac do
+platform :macOS do
   desc "Description of what the lane does"
 
   before_all do
