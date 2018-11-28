@@ -14,13 +14,13 @@
 # update_fastlane
 #
 # https://docs.fastlane.tools/actions
-default_platform(:macOS)
+default_platform(:mac)
 
-platform :macOS do
+platform :mac do
   desc "Description of what the lane does"
 
   before_all do
-    update_fastlane
+    update_fastlane(nightly: true)
     setup_circle_ci
     import_certificate(
       keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
