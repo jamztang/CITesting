@@ -45,6 +45,7 @@ jobs:
       # Build the app and run tests
       - run:
           name: Build and run tests
+          context: org-global
           command: bundle exec fastlane builddebug
       #     environment:
       #       SCAN_DEVICE: iPhone 6
