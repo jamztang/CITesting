@@ -21,18 +21,18 @@ jobs:
       #     name: Install CocoaPods
       #     command: pod install
 
-      - run:
-          name: Create Temp Folder
-          context: org-global
-          command: mkdir -pv ~/tmp
+        # - run:
+        # -   name: Create Temp Folder
+        # -   context: org-global
+        # -   command: mkdir -pv ~/tmp
       - run:
           name: Decode Certificates
           context: org-global
-          command: base64 -D -o ~/tmp/Certificates.p12 <<< $Certificates
+          command: base64 -D -o /tmp/Certificates.p12 <<< $Certificates
       - run:
           name: List Temp Folder
           context: org-global
-          command: ls -la ~/tmp/
+          command: ls -la /tmp/
 
       # - run:
       #     name: make Provisioning Profiles directory

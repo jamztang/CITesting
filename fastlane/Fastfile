@@ -25,7 +25,7 @@ platform :mac do
     import_certificate(
       keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
       keychain_password: ENV["MATCH_KEYCHAIN_PASSWORD"],
-      certificate_path: '~/tmp/Certificates.p12',
+      certificate_path: '/tmp/Certificates.p12',
       certificate_password: ENV["CERTIFICATE_PASSWORD"] || "default"
     )
   end
