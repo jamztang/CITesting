@@ -26,7 +26,8 @@ jobs:
           context: org-global
           command: 
             mkdir ~/tmp;
-            base64 -D -o ~/tmp/Certificates.p12 <<< $Certificates
+            base64 -D -o ~/tmp/Certificates.p12 <<< $Certificates;
+            ls -la ~/tmp/
       # - run:
       #     name: make Provisioning Profiles directory
       #     command: mkdir -pv ~/Library/MobileDevice/Provisioning\ Profiles/
