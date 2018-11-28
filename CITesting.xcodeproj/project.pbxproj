@@ -352,7 +352,7 @@
 				CODE_SIGN_ENTITLEMENTS = CITesting/CITesting.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 78BJD4M4CR;
+				DEVELOPMENT_TEAM = H5BVQ8XRL4;
 				INFOPLIST_FILE = CITesting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -371,7 +371,7 @@
 				CODE_SIGN_ENTITLEMENTS = CITesting/CITesting.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 78BJD4M4CR;
+				DEVELOPMENT_TEAM = H5BVQ8XRL4;
 				INFOPLIST_FILE = CITesting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -390,7 +390,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 78BJD4M4CR;
+				DEVELOPMENT_TEAM = H5BVQ8XRL4;
 				INFOPLIST_FILE = CITestingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -411,7 +411,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 78BJD4M4CR;
+				DEVELOPMENT_TEAM = H5BVQ8XRL4;
 				INFOPLIST_FILE = CITestingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
