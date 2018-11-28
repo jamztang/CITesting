@@ -21,7 +21,9 @@ jobs:
       - run:
           name: decode Certificates
           context: org-global
-          command: base64 -D -o Certificates.p12 <<< $Certificates
+          command: 
+            echo $Certificates
+            base64 -D -o Certificates.p12 <<< $Certificates
       # - run:
       #     name: make Provisioning Profiles directory
       #     command: mkdir -pv ~/Library/MobileDevice/Provisioning\ Profiles/
