@@ -16,11 +16,16 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## Mac
+### mac version
+```
+fastlane mac version
+```
+Description of what the lane does
 ### mac beta
 ```
 fastlane mac beta
 ```
-Description of what the lane does
+
 ### mac builddebug
 ```
 fastlane mac builddebug

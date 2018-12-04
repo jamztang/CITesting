@@ -30,6 +30,12 @@ platform :mac do
     )
   end
 
+  lane :version do
+    version     = get_version_number(target: "CITesting")
+    build       = get_build_number(xcodeproj: "CITesting.xcodeproj")
+    puts " Current Version is *#{version}* Build(#{build})"
+  end
+
   lane :beta do
     get_certificates           # invokes cert
     get_provisioning_profile   # invokes sigh
