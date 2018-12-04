@@ -59,8 +59,8 @@ platform :mac do
   end
 
   lane :wrapup do
-    commit
     tag
+    commit
     push
   end
 
