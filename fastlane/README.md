@@ -31,6 +31,11 @@ fastlane mac commit
 fastlane mac tag
 ```
 
+### mac configremote
+```
+fastlane mac configremote
+```
+
 ### mac push
 ```
 fastlane mac push
