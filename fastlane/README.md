@@ -36,6 +36,11 @@ fastlane mac tag
 fastlane mac push
 ```
 
+### mac wrapup
+```
+fastlane mac wrapup
+```
+
 ### mac beta
 ```
 fastlane mac beta
