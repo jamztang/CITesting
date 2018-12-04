@@ -35,6 +35,11 @@ platform :mac do
     build       = get_build_number(xcodeproj: "CITesting.xcodeproj")
   end
 
+  lane :checkout do
+    branch = environment_variable(get: "APPCENTER_BRANCH")
+    sh("git checkout #{branch}")
+  end
+
   lane :commit do
     increment_build_number
     increment_version_number
@@ -68,6 +73,7 @@ platform :mac do
   end
 
   lane :wrapup do
+    checkout
     tag
     commit
     configremote

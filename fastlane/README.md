@@ -21,6 +21,11 @@ or alternatively using `brew cask install fastlane`
 fastlane mac version
 ```
 Description of what the lane does
+### mac checkout
+```
+fastlane mac checkout
+```
+
 ### mac commit
 ```
 fastlane mac commit
