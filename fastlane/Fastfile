@@ -57,11 +57,14 @@ platform :mac do
   lane :configremote do
     token = environment_variable(get: "GITHUB_TOKEN")
     puts "token is #{token}"
-    sh("sed -i '' 's#git@github.com\:#https\://#{token}@github.com/#' ../.git/config")
+    #sh("sed -i '' 's#git@github.com\:#https\://#{token}@github.com/#' ../.git/config")
+    sh("git remote add temp https://#{token}@github.com/jamztang/CITesting")
   end
 
   lane :push do
-    push_to_git_remote
+    push_to_git_remote(
+      remote: "temp"
+      )
   end
 
   lane :wrapup do
