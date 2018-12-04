@@ -57,7 +57,7 @@ platform :mac do
   lane :configremote do
     token = environment_variable(get: "GITHUB_TOKEN")
     puts "token is #{token}"
-    sh("sed -i '' 's/git@github.com\:/https\:\/\/#{token}@github.com\//gc' .git/config")
+    sh("sed -i '' 's#git@github.com\:#https\://#{token}@github.com/#' ../.git/config")
   end
 
   lane :push do
