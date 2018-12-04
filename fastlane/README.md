@@ -26,6 +26,16 @@ Description of what the lane does
 fastlane mac commit
 ```
 
+### mac tag
+```
+fastlane mac tag
+```
+
+### mac push
+```
+fastlane mac push
+```
+
 ### mac beta
 ```
 fastlane mac beta
