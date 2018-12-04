@@ -22,18 +22,26 @@ platform :mac do
   before_all do
     #update_fastlane(nightly: true)
     setup_circle_ci
-    import_certificate(
-      keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
-      keychain_password: ENV["MATCH_KEYCHAIN_PASSWORD"],
-      certificate_path: '/tmp/Certificates.p12',
-      certificate_password: ENV["CERTIFICATE_PASSWORD"] || "default"
-    )
+    #import_certificate(
+    #  keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
+    #  keychain_password: ENV["MATCH_KEYCHAIN_PASSWORD"],
+    #  certificate_path: '/tmp/Certificates.p12',
+    #  certificate_password: ENV["CERTIFICATE_PASSWORD"] || "default"
+    #)
   end
 
   lane :version do
     version     = get_version_number(target: "CITesting")
     build       = get_build_number(xcodeproj: "CITesting.xcodeproj")
-    puts " Current Version is *#{version}* Build(#{build})"
+  end
+
+  lane :commit do
+    version     = get_version_number(target: "CITesting")
+    build       = get_build_number(xcodeproj: "CITesting.xcodeproj")
+    message     = "#{version} #{build}"
+    commit_version_bump(
+      message: message
+      )
   end
 
   lane :beta do

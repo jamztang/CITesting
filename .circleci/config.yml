@@ -20,20 +20,10 @@ jobs:
       # - run:
       #     name: Install CocoaPods
       #     command: pod install
-
-        # - run:
-        # -   name: Create Temp Folder
-        # -   context: org-global
-        # -   command: mkdir -pv ~/tmp
       - run:
           name: Decode Certificates
           context: org-global
           command: base64 -D -o /tmp/Certificates.p12 <<< $Certificates
-      - run:
-          name: List Temp Folder
-          context: org-global
-          command: ls -la /tmp/
-
       # - run:
       #     name: make Provisioning Profiles directory
       #     command: mkdir -pv ~/Library/MobileDevice/Provisioning\ Profiles/
@@ -62,4 +52,19 @@ jobs:
       - store_artifacts:
           path: ~/Library/Logs/scan
           destination: scan-logs
+
+  # deploy:
+  #   steps:
+  #     - checkout
+  #     - run: 
+  #       name: Deploy to HockeyApp
+  #         command: |
+  #           curl \
+  #             -A "CircleCI 2.0" \
+  #             -F api_key="$HOCKEYAPP_API_KEY" \
+  #             -F comment="CircleCI build $CIRCLE_BUILD_URL" \
+  #             -F file=@path/to/ipafile.ipa \
+  #         https://
+
+    
 
