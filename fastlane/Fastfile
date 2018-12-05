@@ -16,6 +16,12 @@
 # https://docs.fastlane.tools/actions
 default_platform(:mac)
 
+org       = "jamztang"
+name      = "CITesting"
+branch    = environment_variable(get: "APPCENTER_BRANCH")
+token     = environment_variable(get: "GITHUB_TOKEN")
+xcodeproj = "#{name}.xcodeproj"
+
 platform :mac do
   desc "Description of what the lane does"
 
@@ -31,20 +37,19 @@ platform :mac do
   end
 
   lane :version do
-    version     = get_version_number(target: "CITesting")
-    build       = get_build_number(xcodeproj: "CITesting.xcodeproj")
+    version     = get_version_number(target: "#{name}")
+    build       = get_build_number(xcodeproj: "#{xcodeproj}")
   end
 
   lane :checkout do
-    branch = environment_variable(get: "APPCENTER_BRANCH")
     sh("git checkout #{branch}")
   end
 
   lane :commit do
     increment_build_number
     increment_version_number
-    version     = get_version_number(target: "CITesting")
-    build       = get_build_number(xcodeproj: "CITesting.xcodeproj")
+    version     = get_version_number(target: "#{name}")
+    build       = get_build_number(xcodeproj: "#{xcodeproj}")
     message     = "#{version} (#{build}) [skip ci]"
     commit_version_bump(
       message: message
@@ -52,18 +57,17 @@ platform :mac do
   end
 
   lane :tag do
-    version     = get_version_number(target: "CITesting")
-    message     = "#{version}"
+    version     = get_version_number(target: "#{name}")
+    message     = "${branch}/#{version}"
     add_git_tag(
       tag: message
     )
   end
 
   lane :configremote do
-    token = environment_variable(get: "GITHUB_TOKEN")
     puts "token is #{token}"
     #sh("sed -i '' 's#git@github.com\:#https\://#{token}@github.com/#' ../.git/config")
-    sh("git remote add temp https://#{token}@github.com/jamztang/CITesting")
+    sh("git remote add temp https://#{token}@github.com/#{org}/#{target}")
   end
 
   lane :push do
