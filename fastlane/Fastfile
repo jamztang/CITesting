@@ -58,7 +58,7 @@ platform :mac do
 
   lane :tag do
     version     = get_version_number(target: "#{name}")
-    message     = "${branch}/#{version}"
+    message     = "#{branch}/#{version}"
     add_git_tag(
       tag: message
     )
