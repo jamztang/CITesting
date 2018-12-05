@@ -67,7 +67,7 @@ platform :mac do
   lane :configremote do
     puts "token is #{token}"
     #sh("sed -i '' 's#git@github.com\:#https\://#{token}@github.com/#' ../.git/config")
-    sh("git remote add temp https://#{token}@github.com/#{org}/#{target}")
+    sh("git remote add temp https://#{token}@github.com/#{org}/#{name}")
   end
 
   lane :push do
